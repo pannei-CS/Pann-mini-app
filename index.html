@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            background-color: var(--tg-theme-bg-color); /* Telegram theme နဲ့ ကိုက်အောင်ညှိတာ */
+            color: var(--tg-theme-text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="user-name">Hello, Guest!</h1>
+    <button onclick="showAlert()">နှိပ်ကြည့်ပါ</button>
+
+    <script>
+        // 2. Web App ကို Initialize လုပ်ခြင်း
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Screen အပြည့်ချဲ့လိုက်တာ
+
+        // 3. User Data ယူခြင်း
+        const user = tg.initDataUnsafe?.user;
+        if (user) {
+            document.getElementById('user-name').innerText = `Hello, ${user.first_name}!`;
+        }
+
+        function showAlert() {
+            tg.showAlert("Mini App ကနေ နှုတ်ဆက်လိုက်ပါတယ်!");
+        }
+    </script>
+</body>
+</html>
