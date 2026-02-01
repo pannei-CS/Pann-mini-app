@@ -49,15 +49,14 @@
 <body>
 
     <h1 id="user-name">Hello!</h1>
-    <p class="heart">&hearts; &hearts; &hearts;</p>
 
     <button id="initial-btn" class="main-btn" onclick="showButtons()">ဒီကိုနှိပ်နော် Sweetie &hearts;</button>
 
     <div id="button-container">
-        <button class="sub-btn" onclick="sendChoice('ချစ်တယ်')">ချစ်တယ်</button>
-        <button class="sub-btn" onclick="sendChoice('အရမ်းချစ်တယ်')">အရမ်းချစ်တယ်</button>
-        <button class="sub-btn" onclick="sendChoice('အသည်းယားတယ်')">အသည်းယားတယ်</button>
-        <button class="sub-btn" onclick="sendChoice('မုန့်ကျွေး')">မုန့်ကျွေး</button>
+        <button class="sub-btn" onclick="sendChoice1('ပန်းသီး')">Apple</button>
+        <button class="sub-btn" onclick="sendChoice2('ပြောင်းဖူး')">Corn</button>
+        <button class="sub-btn" onclick="sendChoice3('Baby')">Baby</button>
+        <button class="sub-btn" onclick="sendChoice4('ဥ')">Egg</button>
     </div>
 
     <script>
@@ -79,8 +78,14 @@
             tg.HapticFeedback.impactOccurred('medium');
         }
 
-        function sendChoice(choice) {
-            tg.showAlert(choice + " တဲ့လား... ချစ်ဖို့ကောင်းလိုက်တာ!");
+        function sendChoice1(choice) {
+            tg.showAlert(choice + " စားချင်တာလား... ငတ်နေပုံပဲ!");
+        function sendChoice2(choice) {
+            tg.showAlert(choice + " ဘာလို့ရွေးတာလဲ... လှည့်စားခံလိုက်ရလို့လား?");
+        function sendChoice3(choice) {
+            tg.showAlert(choice + " တဲ့... အမယ်နွားလေး:D");
+        function sendChoice4(choice) {
+            tg.showAlert(choice + " ဘာဥလဲ... လဥလား!");
             
             // Bot ဆီကို စာလှမ်းပို့ချင်ရင် ဒါကိုသုံး (Bot ဘက်မှာ code ရေးထားဖို့လိုတယ်)
             // tg.sendData(choice); 
@@ -88,3 +93,4 @@
     </script>
 </body>
 </html>
+
